@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Prism should highlight clike 1`] = `
+"<span class=\\"token comment\\">// Single line comment</span>
+<span class=\\"token comment\\">/* Multi-line
+comment */</span>
+
+<span class=\\"token string\\">\\"foo \\"</span>bar<span class=\\"token string\\">\\" baz\\"</span><span class=\\"token punctuation\\">;</span>
+<span class=\\"token string\\">'foo '</span>bar<span class=\\"token string\\">' baz'</span><span class=\\"token punctuation\\">;</span>
+
+<span class=\\"token number\\">123</span>
+<span class=\\"token number\\">123.456</span>
+<span class=\\"token operator\\">-</span><span class=\\"token number\\">123.456</span>
+<span class=\\"token number\\">1e-23</span>
+<span class=\\"token number\\">123.456E789</span>
+<span class=\\"token number\\">0xaf</span>
+<span class=\\"token number\\">0xAF</span>
+
+
+<span class=\\"token function\\">foo</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+<span class=\\"token function\\">Bar</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+<span class=\\"token function\\">_456</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+"
+`;
+
+exports[`Prism should highlight css 1`] = `
+"
+<span class=\\"token selector\\">.foo</span> <span class=\\"token punctuation\\">{</span>
+  <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> blue<span class=\\"token punctuation\\">;</span>
+  <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> red<span class=\\"token punctuation\\">;</span>
+<span class=\\"token punctuation\\">}</span>
+
+<span class=\\"token selector\\">.bar</span> <span class=\\"token punctuation\\">{</span>
+  <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> yello<span class=\\"token punctuation\\">;</span>
+  <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> green<span class=\\"token punctuation\\">;</span>
+<span class=\\"token punctuation\\">}</span>
+"
+`;
+
+exports[`Prism should highlight elixir 1`] = `
+"<span class=\\"token comment\\"># Define a struct for this example</span>
+<span class=\\"token keyword\\">defmodule</span> User <span class=\\"token keyword\\">do</span>
+  <span class=\\"token keyword\\">defstruct</span> <span class=\\"token attr-name\\">email:</span> <span class=\\"token boolean\\">nil</span>
+<span class=\\"token keyword\\">end</span>
+
+<span class=\\"token comment\\"># dot syntax</span>
+<span class=\\"token string\\">\\"c@c.com\\"</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">%</span>User<span class=\\"token punctuation\\">{</span><span class=\\"token attr-name\\">email:</span> <span class=\\"token string\\">\\"c@c.com\\"</span><span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">.</span>email
+
+<span class=\\"token comment\\"># Underlying implementation is a map</span>
+<span class=\\"token comment\\"># So Map methods work</span>
+<span class=\\"token string\\">\\"c@c.com\\"</span> <span class=\\"token operator\\">=</span> Map<span class=\\"token punctuation\\">.</span>get<span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">%</span>User<span class=\\"token punctuation\\">{</span><span class=\\"token attr-name\\">email:</span> <span class=\\"token string\\">\\"c@c.com\\"</span><span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">,</span> <span class=\\"token atom symbol\\">:email</span><span class=\\"token punctuation\\">)</span>
+
+<span class=\\"token comment\\"># Pattern match to get a value</span>
+<span class=\\"token punctuation\\">%</span><span class=\\"token punctuation\\">{</span> <span class=\\"token attr-name\\">email:</span> email <span class=\\"token punctuation\\">}</span>   <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">%</span>User<span class=\\"token punctuation\\">{</span><span class=\\"token attr-name\\">email:</span> <span class=\\"token string\\">\\"c@c.com\\"</span><span class=\\"token punctuation\\">}</span>
+<span class=\\"token punctuation\\">%</span>User<span class=\\"token punctuation\\">{</span><span class=\\"token attr-name\\">email:</span> email<span class=\\"token punctuation\\">}</span> <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">%</span>User<span class=\\"token punctuation\\">{</span><span class=\\"token attr-name\\">email:</span> <span class=\\"token string\\">\\"c@c.com\\"</span><span class=\\"token punctuation\\">}</span>
+
+<span class=\\"token comment\\"># Access protocol not available by default</span>
+<span class=\\"token punctuation\\">%</span>User<span class=\\"token punctuation\\">{</span><span class=\\"token attr-name\\">email:</span> <span class=\\"token string\\">\\"c@c.com\\"</span><span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">[</span><span class=\\"token atom symbol\\">:email</span><span class=\\"token punctuation\\">]</span>
+<span class=\\"token comment\\">#** (UndefinedFunctionError) undefined function User.fetch/2 (User does not implement the Access behaviour)</span>
+<span class=\\"token comment\\">#             User.fetch(%User{email: \\"c@c.com\\"}, :email)</span>
+<span class=\\"token comment\\">#    (elixir) lib/access.ex:118: Access.fetch/2</span>
+<span class=\\"token comment\\">#    (elixir) lib/access.ex:149: Access.get/3</span>
+
+
+<span class=\\"token comment\\"># Enumerable protocol not available by default</span>
+Enum<span class=\\"token punctuation\\">.</span>filter<span class=\\"token punctuation\\">(</span> <span class=\\"token punctuation\\">%</span>User<span class=\\"token punctuation\\">{</span><span class=\\"token attr-name\\">email:</span> <span class=\\"token string\\">\\"c@c.com\\"</span><span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">,</span> <span class=\\"token keyword\\">fn</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">{</span>key<span class=\\"token punctuation\\">,</span> _<span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">-></span> key <span class=\\"token operator\\">==</span> <span class=\\"token atom symbol\\">:email</span>  <span class=\\"token keyword\\">end</span><span class=\\"token punctuation\\">)</span>
+<span class=\\"token comment\\">#** (Protocol.UndefinedError) protocol Enumerable not implemented for %User{email: \\"c@c.com\\"}</span>
+<span class=\\"token comment\\">#    (elixir) lib/enum.ex:1: Enumerable.impl_for!/1</span>
+<span class=\\"token comment\\">#    (elixir) lib/enum.ex:116: Enumerable.reduce/3</span>
+<span class=\\"token comment\\">#    (elixir) lib/enum.ex:1477: Enum.reduce/3</span>
+<span class=\\"token comment\\">#    (elixir) lib/enum.ex:742: Enum.filter/2</span>"
+`;
+
+exports[`Prism should highlight javascript 1`] = `
+"<span class=\\"token keyword\\">class</span> <span class=\\"token class-name\\">TodoApp</span> <span class=\\"token keyword\\">extends</span> <span class=\\"token class-name\\">React<span class=\\"token punctuation\\">.</span>Component</span> <span class=\\"token punctuation\\">{</span>
+  <span class=\\"token function\\">constructor</span><span class=\\"token punctuation\\">(</span>props<span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>
+    <span class=\\"token keyword\\">super</span><span class=\\"token punctuation\\">(</span>props<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+    <span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>state <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">{</span> items<span class=\\"token punctuation\\">:</span> <span class=\\"token punctuation\\">[</span><span class=\\"token punctuation\\">]</span><span class=\\"token punctuation\\">,</span> text<span class=\\"token punctuation\\">:</span> <span class=\\"token string\\">\\"\\"</span> <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>
+    <span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>handleChange <span class=\\"token operator\\">=</span> <span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>handleChange<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">bind</span><span class=\\"token punctuation\\">(</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+    <span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>handleSubmit <span class=\\"token operator\\">=</span> <span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>handleSubmit<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">bind</span><span class=\\"token punctuation\\">(</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+  <span class=\\"token punctuation\\">}</span>
+
+  <span class=\\"token function\\">render</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>
+    <span class=\\"token keyword\\">return</span> <span class=\\"token punctuation\\">(</span>
+      <span class=\\"token operator\\">&lt;</span>div<span class=\\"token operator\\">></span>
+        <span class=\\"token operator\\">&lt;</span>h3<span class=\\"token operator\\">></span><span class=\\"token constant\\">TODO</span><span class=\\"token operator\\">&lt;</span><span class=\\"token operator\\">/</span>h3<span class=\\"token operator\\">></span>
+        <span class=\\"token operator\\">&lt;</span>TodoList items<span class=\\"token operator\\">=</span><span class=\\"token punctuation\\">{</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>state<span class=\\"token punctuation\\">.</span>items<span class=\\"token punctuation\\">}</span> <span class=\\"token operator\\">/</span><span class=\\"token operator\\">></span>
+        <span class=\\"token operator\\">&lt;</span>form onSubmit<span class=\\"token operator\\">=</span><span class=\\"token punctuation\\">{</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>handleSubmit<span class=\\"token punctuation\\">}</span><span class=\\"token operator\\">></span>
+          <span class=\\"token operator\\">&lt;</span>label htmlFor<span class=\\"token operator\\">=</span><span class=\\"token string\\">\\"new-todo\\"</span><span class=\\"token operator\\">></span>What needs to be done<span class=\\"token operator\\">?</span><span class=\\"token operator\\">&lt;</span><span class=\\"token operator\\">/</span>label<span class=\\"token operator\\">></span>
+          <span class=\\"token operator\\">&lt;</span>input
+            id<span class=\\"token operator\\">=</span><span class=\\"token string\\">\\"new-todo\\"</span>
+            onChange<span class=\\"token operator\\">=</span><span class=\\"token punctuation\\">{</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>handleChange<span class=\\"token punctuation\\">}</span>
+            value<span class=\\"token operator\\">=</span><span class=\\"token punctuation\\">{</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>state<span class=\\"token punctuation\\">.</span>text<span class=\\"token punctuation\\">}</span>
+          <span class=\\"token operator\\">/</span><span class=\\"token operator\\">></span>
+          <span class=\\"token operator\\">&lt;</span>button<span class=\\"token operator\\">></span>Add #<span class=\\"token punctuation\\">{</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>state<span class=\\"token punctuation\\">.</span>items<span class=\\"token punctuation\\">.</span>length <span class=\\"token operator\\">+</span> <span class=\\"token number\\">1</span><span class=\\"token punctuation\\">}</span><span class=\\"token operator\\">&lt;</span><span class=\\"token operator\\">/</span>button<span class=\\"token operator\\">></span>
+        <span class=\\"token operator\\">&lt;</span><span class=\\"token operator\\">/</span>form<span class=\\"token operator\\">></span>
+      <span class=\\"token operator\\">&lt;</span><span class=\\"token operator\\">/</span>div<span class=\\"token operator\\">></span>
+    <span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+  <span class=\\"token punctuation\\">}</span>
+
+  <span class=\\"token function\\">handleChange</span><span class=\\"token punctuation\\">(</span>e<span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>
+    <span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span><span class=\\"token function\\">setState</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">{</span> text<span class=\\"token punctuation\\">:</span> e<span class=\\"token punctuation\\">.</span>target<span class=\\"token punctuation\\">.</span>value <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+  <span class=\\"token punctuation\\">}</span>
+
+  <span class=\\"token function\\">handleSubmit</span><span class=\\"token punctuation\\">(</span>e<span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>
+    e<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">preventDefault</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+    <span class=\\"token keyword\\">if</span> <span class=\\"token punctuation\\">(</span><span class=\\"token operator\\">!</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>state<span class=\\"token punctuation\\">.</span>text<span class=\\"token punctuation\\">.</span>length<span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>
+      <span class=\\"token keyword\\">return</span><span class=\\"token punctuation\\">;</span>
+    <span class=\\"token punctuation\\">}</span>
+    <span class=\\"token keyword\\">const</span> newItem <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">{</span>
+      text<span class=\\"token punctuation\\">:</span> <span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>state<span class=\\"token punctuation\\">.</span>text<span class=\\"token punctuation\\">,</span>
+      id<span class=\\"token punctuation\\">:</span> Date<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">now</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span>
+    <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>
+    <span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span><span class=\\"token function\\">setState</span><span class=\\"token punctuation\\">(</span>prevState <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">{</span>
+      items<span class=\\"token punctuation\\">:</span> prevState<span class=\\"token punctuation\\">.</span>items<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">concat</span><span class=\\"token punctuation\\">(</span>newItem<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">,</span>
+      text<span class=\\"token punctuation\\">:</span> <span class=\\"token string\\">\\"\\"</span>
+    <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+  <span class=\\"token punctuation\\">}</span>
+<span class=\\"token punctuation\\">}</span>
+
+<span class=\\"token keyword\\">class</span> <span class=\\"token class-name\\">TodoList</span> <span class=\\"token keyword\\">extends</span> <span class=\\"token class-name\\">React<span class=\\"token punctuation\\">.</span>Component</span> <span class=\\"token punctuation\\">{</span>
+  <span class=\\"token function\\">render</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>
+    <span class=\\"token keyword\\">return</span> <span class=\\"token punctuation\\">(</span>
+      <span class=\\"token operator\\">&lt;</span>ul<span class=\\"token operator\\">></span>
+        <span class=\\"token punctuation\\">{</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>props<span class=\\"token punctuation\\">.</span>items<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">map</span><span class=\\"token punctuation\\">(</span>item <span class=\\"token operator\\">=></span> <span class=\\"token operator\\">&lt;</span>li key<span class=\\"token operator\\">=</span><span class=\\"token punctuation\\">{</span>item<span class=\\"token punctuation\\">.</span>id<span class=\\"token punctuation\\">}</span><span class=\\"token operator\\">></span><span class=\\"token punctuation\\">{</span>item<span class=\\"token punctuation\\">.</span>text<span class=\\"token punctuation\\">}</span><span class=\\"token operator\\">&lt;</span><span class=\\"token operator\\">/</span>li<span class=\\"token operator\\">></span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">}</span>
+      <span class=\\"token operator\\">&lt;</span><span class=\\"token operator\\">/</span>ul<span class=\\"token operator\\">></span>
+    <span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+  <span class=\\"token punctuation\\">}</span>
+<span class=\\"token punctuation\\">}</span>
+
+ReactDOM<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">render</span><span class=\\"token punctuation\\">(</span><span class=\\"token operator\\">&lt;</span>TodoApp <span class=\\"token operator\\">/</span><span class=\\"token operator\\">></span><span class=\\"token punctuation\\">,</span> mountNode<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>"
+`;
+
+exports[`Prism should highlight jsx 1`] = `
+"<span class=\\"token keyword\\">class</span> <span class=\\"token class-name\\">TodoApp</span> <span class=\\"token keyword\\">extends</span> <span class=\\"token class-name\\">React<span class=\\"token punctuation\\">.</span>Component</span> <span class=\\"token punctuation\\">{</span>
+  <span class=\\"token function\\">constructor</span><span class=\\"token punctuation\\">(</span>props<span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>
+    <span class=\\"token keyword\\">super</span><span class=\\"token punctuation\\">(</span>props<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+    <span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>state <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">{</span> items<span class=\\"token punctuation\\">:</span> <span class=\\"token punctuation\\">[</span><span class=\\"token punctuation\\">]</span><span class=\\"token punctuation\\">,</span> text<span class=\\"token punctuation\\">:</span> <span class=\\"token string\\">\\"\\"</span> <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>
+    <span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>handleChange <span class=\\"token operator\\">=</span> <span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>handleChange<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">bind</span><span class=\\"token punctuation\\">(</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+    <span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>handleSubmit <span class=\\"token operator\\">=</span> <span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>handleSubmit<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">bind</span><span class=\\"token punctuation\\">(</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+  <span class=\\"token punctuation\\">}</span>
+
+  <span class=\\"token function\\">render</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>
+    <span class=\\"token keyword\\">return</span> <span class=\\"token punctuation\\">(</span>
+      <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>div</span><span class=\\"token punctuation\\">></span></span><span class=\\"token plain-text\\">
+        </span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>h3</span><span class=\\"token punctuation\\">></span></span><span class=\\"token plain-text\\">TODO</span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>h3</span><span class=\\"token punctuation\\">></span></span><span class=\\"token plain-text\\">
+        </span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>TodoList</span> <span class=\\"token attr-name\\">items</span><span class=\\"token script language-javascript\\"><span class=\\"token script-punctuation punctuation\\">=</span><span class=\\"token punctuation\\">{</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>state<span class=\\"token punctuation\\">.</span>items<span class=\\"token punctuation\\">}</span></span> <span class=\\"token punctuation\\">/></span></span><span class=\\"token plain-text\\">
+        </span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>form</span> <span class=\\"token attr-name\\">onSubmit</span><span class=\\"token script language-javascript\\"><span class=\\"token script-punctuation punctuation\\">=</span><span class=\\"token punctuation\\">{</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>handleSubmit<span class=\\"token punctuation\\">}</span></span><span class=\\"token punctuation\\">></span></span><span class=\\"token plain-text\\">
+          </span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>label</span> <span class=\\"token attr-name\\">htmlFor</span><span class=\\"token attr-value\\"><span class=\\"token punctuation\\">=</span><span class=\\"token punctuation\\">\\"</span>new-todo<span class=\\"token punctuation\\">\\"</span></span><span class=\\"token punctuation\\">></span></span><span class=\\"token plain-text\\">What needs to be done?</span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>label</span><span class=\\"token punctuation\\">></span></span><span class=\\"token plain-text\\">
+          </span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>input</span>
+            <span class=\\"token attr-name\\">id</span><span class=\\"token attr-value\\"><span class=\\"token punctuation\\">=</span><span class=\\"token punctuation\\">\\"</span>new-todo<span class=\\"token punctuation\\">\\"</span></span>
+            <span class=\\"token attr-name\\">onChange</span><span class=\\"token script language-javascript\\"><span class=\\"token script-punctuation punctuation\\">=</span><span class=\\"token punctuation\\">{</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>handleChange<span class=\\"token punctuation\\">}</span></span>
+            <span class=\\"token attr-name\\">value</span><span class=\\"token script language-javascript\\"><span class=\\"token script-punctuation punctuation\\">=</span><span class=\\"token punctuation\\">{</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>state<span class=\\"token punctuation\\">.</span>text<span class=\\"token punctuation\\">}</span></span>
+          <span class=\\"token punctuation\\">/></span></span><span class=\\"token plain-text\\">
+          </span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>button</span><span class=\\"token punctuation\\">></span></span><span class=\\"token plain-text\\">Add #</span><span class=\\"token punctuation\\">{</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>state<span class=\\"token punctuation\\">.</span>items<span class=\\"token punctuation\\">.</span>length <span class=\\"token operator\\">+</span> <span class=\\"token number\\">1</span><span class=\\"token punctuation\\">}</span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>button</span><span class=\\"token punctuation\\">></span></span><span class=\\"token plain-text\\">
+        </span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>form</span><span class=\\"token punctuation\\">></span></span><span class=\\"token plain-text\\">
+      </span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>div</span><span class=\\"token punctuation\\">></span></span>
+    <span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+  <span class=\\"token punctuation\\">}</span>
+
+  <span class=\\"token function\\">handleChange</span><span class=\\"token punctuation\\">(</span>e<span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>
+    <span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span><span class=\\"token function\\">setState</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">{</span> text<span class=\\"token punctuation\\">:</span> e<span class=\\"token punctuation\\">.</span>target<span class=\\"token punctuation\\">.</span>value <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+  <span class=\\"token punctuation\\">}</span>
+
+  <span class=\\"token function\\">handleSubmit</span><span class=\\"token punctuation\\">(</span>e<span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>
+    e<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">preventDefault</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+    <span class=\\"token keyword\\">if</span> <span class=\\"token punctuation\\">(</span><span class=\\"token operator\\">!</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>state<span class=\\"token punctuation\\">.</span>text<span class=\\"token punctuation\\">.</span>length<span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>
+      <span class=\\"token keyword\\">return</span><span class=\\"token punctuation\\">;</span>
+    <span class=\\"token punctuation\\">}</span>
+    <span class=\\"token keyword\\">const</span> newItem <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">{</span>
+      text<span class=\\"token punctuation\\">:</span> <span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>state<span class=\\"token punctuation\\">.</span>text<span class=\\"token punctuation\\">,</span>
+      id<span class=\\"token punctuation\\">:</span> Date<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">now</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span>
+    <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">;</span>
+    <span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span><span class=\\"token function\\">setState</span><span class=\\"token punctuation\\">(</span>prevState <span class=\\"token operator\\">=></span> <span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">{</span>
+      items<span class=\\"token punctuation\\">:</span> prevState<span class=\\"token punctuation\\">.</span>items<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">concat</span><span class=\\"token punctuation\\">(</span>newItem<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">,</span>
+      text<span class=\\"token punctuation\\">:</span> <span class=\\"token string\\">\\"\\"</span>
+    <span class=\\"token punctuation\\">}</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+  <span class=\\"token punctuation\\">}</span>
+<span class=\\"token punctuation\\">}</span>
+
+<span class=\\"token keyword\\">class</span> <span class=\\"token class-name\\">TodoList</span> <span class=\\"token keyword\\">extends</span> <span class=\\"token class-name\\">React<span class=\\"token punctuation\\">.</span>Component</span> <span class=\\"token punctuation\\">{</span>
+  <span class=\\"token function\\">render</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span> <span class=\\"token punctuation\\">{</span>
+    <span class=\\"token keyword\\">return</span> <span class=\\"token punctuation\\">(</span>
+      <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>ul</span><span class=\\"token punctuation\\">></span></span><span class=\\"token plain-text\\">
+        </span><span class=\\"token punctuation\\">{</span><span class=\\"token keyword\\">this</span><span class=\\"token punctuation\\">.</span>props<span class=\\"token punctuation\\">.</span>items<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">map</span><span class=\\"token punctuation\\">(</span>item <span class=\\"token operator\\">=></span> <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>li</span> <span class=\\"token attr-name\\">key</span><span class=\\"token script language-javascript\\"><span class=\\"token script-punctuation punctuation\\">=</span><span class=\\"token punctuation\\">{</span>item<span class=\\"token punctuation\\">.</span>id<span class=\\"token punctuation\\">}</span></span><span class=\\"token punctuation\\">></span></span><span class=\\"token punctuation\\">{</span>item<span class=\\"token punctuation\\">.</span>text<span class=\\"token punctuation\\">}</span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>li</span><span class=\\"token punctuation\\">></span></span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">}</span><span class=\\"token plain-text\\">
+      </span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>ul</span><span class=\\"token punctuation\\">></span></span>
+    <span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
+  <span class=\\"token punctuation\\">}</span>
+<span class=\\"token punctuation\\">}</span>
+
+ReactDOM<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">render</span><span class=\\"token punctuation\\">(</span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>TodoApp</span> <span class=\\"token punctuation\\">/></span></span><span class=\\"token punctuation\\">,</span> mountNode<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>"
+`;
+
+exports[`Prism should highlight markup 1`] = `
+"<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>div</span><span class=\\"token punctuation\\">></span></span>
+<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>ul</span><span class=\\"token punctuation\\">></span></span>
+  <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>li</span> <span class=\\"token attr-name\\">className</span><span class=\\"token attr-value\\"><span class=\\"token punctuation\\">=</span><span class=\\"token punctuation\\">'</span>foo<span class=\\"token punctuation\\">'</span></span> <span class=\\"token attr-name\\">alt</span><span class=\\"token attr-value\\"><span class=\\"token punctuation\\">=</span><span class=\\"token punctuation\\">'</span>bar<span class=\\"token punctuation\\">'</span></span><span class=\\"token style-attr language-css\\"><span class=\\"token attr-name\\"> <span class=\\"token attr-name\\">style</span></span><span class=\\"token punctuation\\">=\\"</span><span class=\\"token attr-value\\"><span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> red<span class=\\"token punctuation\\">;</span></span><span class=\\"token punctuation\\">\\"</span></span><span class=\\"token punctuation\\">></span></span>
+    Hello!
+  <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>li</span><span class=\\"token punctuation\\">></span></span>
+<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>ul</span><span class=\\"token punctuation\\">></span></span>
+<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>div</span><span class=\\"token punctuation\\">></span></span>"
+`;
+
+exports[`Prism should highlight ruby 1`] = `
+"<span class=\\"token comment\\"># Pick a random number.</span>
+rno <span class=\\"token operator\\">=</span> <span class=\\"token function\\">rand</span><span class=\\"token punctuation\\">(</span><span class=\\"token number\\">100</span><span class=\\"token punctuation\\">)</span> <span class=\\"token operator\\">+</span> <span class=\\"token number\\">1</span>
+print <span class=\\"token string\\">\\"Your magic number is \\"</span><span class=\\"token punctuation\\">,</span> rno<span class=\\"token punctuation\\">,</span> \\"
+\\"
+
+<span class=\\"token comment\\"># Perform all sort of totally uselss test on it and report the results.</span>
+<span class=\\"token keyword\\">if</span> rno <span class=\\"token operator\\">%</span> <span class=\\"token number\\">2</span> <span class=\\"token operator\\">==</span> <span class=\\"token number\\">1</span> <span class=\\"token keyword\\">then</span>
+    print \\"<span class=\\"token constant\\">Ooooh</span><span class=\\"token punctuation\\">,</span> that's an odd number<span class=\\"token punctuation\\">.</span>
+\\"
+<span class=\\"token keyword\\">else</span>
+    print \\"<span class=\\"token constant\\">That</span>'s an even number<span class=\\"token punctuation\\">.</span>
+\\"
+    <span class=\\"token keyword\\">if</span> rno <span class=\\"token operator\\">></span> <span class=\\"token number\\">2</span> <span class=\\"token keyword\\">then</span>
+        print \\"<span class=\\"token constant\\">It</span>'s <span class=\\"token keyword\\">not</span> prime<span class=\\"token punctuation\\">,</span> <span class=\\"token constant\\">BTW</span><span class=\\"token punctuation\\">.</span>
+\\"
+    <span class=\\"token keyword\\">end</span>
+<span class=\\"token keyword\\">end</span>
+
+<span class=\\"token keyword\\">if</span> rno <span class=\\"token operator\\">></span> <span class=\\"token number\\">50</span>
+    print \\"<span class=\\"token constant\\">That</span>'s more than half as big as it could be<span class=\\"token operator\\">!</span>
+\\"
+<span class=\\"token keyword\\">elsif</span> rno <span class=\\"token operator\\">==</span> <span class=\\"token number\\">42</span>
+    print \\"<span class=\\"token constant\\">That</span>'s the ultimate magic number<span class=\\"token operator\\">!</span><span class=\\"token operator\\">!</span><span class=\\"token operator\\">!</span><span class=\\"token operator\\">!</span>
+\\"
+<span class=\\"token keyword\\">elsif</span> rno <span class=\\"token operator\\">&lt;</span> <span class=\\"token number\\">10</span>
+    print \\"<span class=\\"token constant\\">That</span>'s pretty small<span class=\\"token punctuation\\">,</span> actually<span class=\\"token punctuation\\">.</span>
+\\"
+<span class=\\"token keyword\\">else</span>
+    print \\"<span class=\\"token constant\\">What</span> a boring number<span class=\\"token punctuation\\">.</span>
+\\"
+<span class=\\"token keyword\\">end</span>
+
+<span class=\\"token keyword\\">if</span> rno <span class=\\"token operator\\">==</span> <span class=\\"token number\\">100</span> <span class=\\"token keyword\\">then</span> print \\"<span class=\\"token constant\\">Gosh</span><span class=\\"token punctuation\\">,</span> you've maxxed out<span class=\\"token operator\\">!</span>
+\\" <span class=\\"token keyword\\">end</span>"
+`;
