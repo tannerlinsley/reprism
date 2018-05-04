@@ -14,6 +14,7 @@ The original [Prism.js](https://prismjs.com) is probably one of the best syntax 
 
 ## Features
 
+* 7kb! Additional languages are mere kb's.
 * 100% Prism Theme compatibility
 * SSR compatible
 * Feature Parity for all original Prism languages
