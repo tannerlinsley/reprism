@@ -1,6 +1,6 @@
 {
   "name": "reprism",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Modular Syntax highlighting for the web",
   "main": "lib/index.js",
   "module": "es/index.js",
