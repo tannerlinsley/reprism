@@ -1,6 +1,6 @@
 {
   "name": "reprism",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Modular Syntax highlighting for the web",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -12,7 +12,7 @@
     "testWatch": "yarn test --watchAll",
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server",
-    "prepublishOnly": "yarn test && yarn build"
+    "prepublishOnly": "yarn test && yarn build && cp -R lib/languages languages"
   },
   "devDependencies": {
     "eslint-config-react-tools": "^1.2.5",
