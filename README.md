@@ -66,6 +66,7 @@ Good news! You can use any prism compatible theme that you want, out of the box.
 
 Here are the themes we recommend:
 
+* [RePrism: Default Themes](https://github.com/tannerlinsley/reprism/tree/master/themes/)
 * [PrismJS: Default Themes](https://github.com/PrismJS/prism/tree/master/themes/)
 * [PrismJS: Extended Themes](https://github.com/PrismJS/prism-themes/tree/master/themes)
 * [React-Smackdown Themes](https://github.com/react-tools/react-smackdown/tree/master/themes/)
