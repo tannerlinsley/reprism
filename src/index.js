@@ -3,8 +3,9 @@ import css from './languages/css'
 import clike from './languages/clike'
 import javascript from './languages/javascript'
 
-import { loadLanguages } from './core'
+import Reprism, { highlight, loadLanguages } from './core'
 
 loadLanguages([markup, css, clike, javascript])
 
-export * from './core'
+export default Reprism
+export { highlight, loadLanguages }

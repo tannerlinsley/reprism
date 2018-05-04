@@ -137,8 +137,9 @@ That's it!
 Use this method to highlight a string of code.
 
 * Arguments
-  * `code: String` - The string of code you want to highlight
-  * `language: String` - The language you want to use to parse the code.
+  * `code: String (Required)` - The string of code you want to highlight
+  * `language: String (Required)` - The language you want to use to parse the code.
+  * `component: String|Boolean` - Defaults to `pre`. The html tag RePrism should use to wrap the source code. If set to `false`, the source code will not be wrapped in any element.
 * Returns
   * `String` - The resulting HTML markup for your code as a `String`, wrapped in a `<pre>` tag.
 

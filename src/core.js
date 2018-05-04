@@ -75,7 +75,7 @@ const Prism = {
 
 export default Prism
 
-export function highlight (text, language) {
+export function highlight (text, language, { component = 'pre' } = {}) {
   if (!languages[language]) {
     if (!language) {
       throw new Error('A language is required!')
@@ -90,10 +90,9 @@ export function highlight (text, language) {
   hooks.run('before-tokenize', env)
   env.tokens = tokenize(env.code, env.grammar)
   hooks.run('after-tokenize', env)
-  return `<pre class='reprism ${language} language-${language}'>${Token.stringify(
-    encode(env.tokens),
-    env.language
-  )}</pre>
+  return `${
+    component ? `<${component} class='reprism ${language} language-${language}'>` : ''
+  }${Token.stringify(encode(env.tokens), env.language)}${component ? `</${component}>` : ''}
   `
 }
 

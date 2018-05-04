@@ -1,4 +1,4 @@
-import { highlight, loadLanguages } from '../'
+import Prism, { highlight, loadLanguages } from '../'
 
 import markupTest from './snippets/markup'
 import cssTest from './snippets/css'
@@ -14,6 +14,9 @@ import ruby from '../languages/ruby'
 loadLanguages(jsx, elixir, ruby)
 
 describe('Prism', () => {
+  it('should export a global', () => {
+    expect(Prism).toBeDefined()
+  })
   it('should highlight markup', () => {
     const res = highlight(markupTest, 'markup')
     expect(res).toMatchSnapshot()
