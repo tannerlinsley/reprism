@@ -56,7 +56,7 @@ const htmlCode = `
 `;
 
 const highlightedCode = reprism(htmlCode, "html");
-// <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\...
+// <pre class='reprism html language-html'><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\...
 ```
 
 ## Using Prism Themes
@@ -96,7 +96,7 @@ const jsxCode = `
 `;
 
 const highlightedCode = reprism(jsxCode, "jsx");
-// <span class=\\"token keyword\\">const</span> element <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span>...
+// <pre class='reprism jsx language-jsx'<span class=\\"token keyword\\">const</span> element <span class=\\"token operator\\">=</span> <span class=\\"token punctuation\\">(</span>...
 ```
 
 ## Plugins
@@ -129,6 +129,56 @@ export default {
 ```
 
 That's it!
+
+## API
+
+#### `highlight`
+
+Use this method to highlight a string of code.
+
+* Arguments
+  * `code: String` - The string of code you want to highlight
+  * `language: String` - The language you want to use to parse the code.
+* Returns
+  * `String` - The resulting HTML markup for your code as a `String`, wrapped in a `<pre>` tag.
+
+```javascript
+import { highlight } from "reprism";
+
+const highlightedCode = highlight("...", "javascript");
+```
+
+#### `loadLanguages`
+
+Use this method to load languages into RePrism
+
+* Arguments
+  * `...languages` or `languages[]` - The languages you want to load. You can pass them as paramaters, or as an array.
+
+```javascript
+import { loadLanguages } from "reprism";
+
+import jsx from "reprism/languages/jsx";
+import elixir from "reprism/languages/elixir";
+import ruby from "reprism/languages/ruby";
+
+loadLanguages(jsx, elixir, ruby);
+// or
+loadLanguages([jsx, elixir, ruby]);
+```
+
+#### `Prism`
+
+The global export used almost exclusively for Plugin backwards compatibility. Expose this as a global variable for plugins to work properly
+
+```javascript
+import Prism from "reprism";
+
+if (typeof document !== "undefined") {
+  window.Prism = Prism;
+  require("prismjs/plugins/copy-to-clipboard");
+}
+```
 
 [build-badge]: https://img.shields.io/travis/tannerlinsley/reprism/master.png
 [build]: https://travis-ci.org/tannerlinsley/reprism
