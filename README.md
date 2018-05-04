@@ -1,8 +1,10 @@
 # RePrism
 
-[![Travis][build-badge]][build]
+<!-- [![Travis][build-badge]][build] -->
+
 [![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+
+<!-- [![Coveralls][coveralls-badge]][coveralls] -->
 
 Modular Syntax highlighting for the web.
 

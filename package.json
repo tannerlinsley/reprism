@@ -1,6 +1,6 @@
 {
-  "name": "react-syntax",
-  "version": "1.0.0",
+  "name": "reprism",
+  "version": "0.0.1",
   "description": "react-syntax React component",
   "main": "lib/index.js",
   "module": "es/index.js",
