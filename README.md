@@ -117,7 +117,7 @@ if (typeof document !== "undefined") {
 
 ## Migrating Other Languages
 
-If you have a language that wasn't already ported from the [original Prism list](https://github.com/tannerlinsley/reprism/tree/master/languages/), then you can easily upgrade it to work with RePrism like so:
+If you have a language that wasn't already ported from the [original Prism list](https://github.com/tannerlinsley/reprism/tree/master/src/languages/), then you can easily upgrade it to work with RePrism like so:
 
 ```javascript
 export default {

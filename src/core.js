@@ -92,8 +92,7 @@ export function highlight (text, language, { component = 'pre' } = {}) {
   hooks.run('after-tokenize', env)
   return `${
     component ? `<${component} class='reprism ${language} language-${language}'>` : ''
-  }${Token.stringify(encode(env.tokens), env.language)}${component ? `</${component}>` : ''}
-  `
+  }${Token.stringify(encode(env.tokens), env.language)}${component ? `</${component}>` : ''}`
 }
 
 export function encode (tokens) {

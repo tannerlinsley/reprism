@@ -20,8 +20,7 @@ comment */</span>
 <span class=\\"token function\\">foo</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
 <span class=\\"token function\\">Bar</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
 <span class=\\"token function\\">_456</span><span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span>
-</pre>
-  "
+</pre>"
 `;
 
 exports[`Prism should highlight css 1`] = `
@@ -35,8 +34,7 @@ exports[`Prism should highlight css 1`] = `
   <span class=\\"token property\\">background</span><span class=\\"token punctuation\\">:</span> yello<span class=\\"token punctuation\\">;</span>
   <span class=\\"token property\\">color</span><span class=\\"token punctuation\\">:</span> green<span class=\\"token punctuation\\">;</span>
 <span class=\\"token punctuation\\">}</span>
-</pre>
-  "
+</pre>"
 `;
 
 exports[`Prism should highlight elixir 1`] = `
@@ -70,8 +68,7 @@ Enum<span class=\\"token punctuation\\">.</span>filter<span class=\\"token punct
 <span class=\\"token comment\\">#    (elixir) lib/enum.ex:1: Enumerable.impl_for!/1</span>
 <span class=\\"token comment\\">#    (elixir) lib/enum.ex:116: Enumerable.reduce/3</span>
 <span class=\\"token comment\\">#    (elixir) lib/enum.ex:1477: Enum.reduce/3</span>
-<span class=\\"token comment\\">#    (elixir) lib/enum.ex:742: Enum.filter/2</span></pre>
-  "
+<span class=\\"token comment\\">#    (elixir) lib/enum.ex:742: Enum.filter/2</span></pre>"
 `;
 
 exports[`Prism should highlight javascript 1`] = `
@@ -131,8 +128,7 @@ exports[`Prism should highlight javascript 1`] = `
   <span class=\\"token punctuation\\">}</span>
 <span class=\\"token punctuation\\">}</span>
 
-ReactDOM<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">render</span><span class=\\"token punctuation\\">(</span><span class=\\"token operator\\">&lt;</span>TodoApp <span class=\\"token operator\\">/</span><span class=\\"token operator\\">></span><span class=\\"token punctuation\\">,</span> mountNode<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span></pre>
-  "
+ReactDOM<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">render</span><span class=\\"token punctuation\\">(</span><span class=\\"token operator\\">&lt;</span>TodoApp <span class=\\"token operator\\">/</span><span class=\\"token operator\\">></span><span class=\\"token punctuation\\">,</span> mountNode<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span></pre>"
 `;
 
 exports[`Prism should highlight jsx 1`] = `
@@ -192,8 +188,7 @@ exports[`Prism should highlight jsx 1`] = `
   <span class=\\"token punctuation\\">}</span>
 <span class=\\"token punctuation\\">}</span>
 
-ReactDOM<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">render</span><span class=\\"token punctuation\\">(</span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>TodoApp</span> <span class=\\"token punctuation\\">/></span></span><span class=\\"token punctuation\\">,</span> mountNode<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span></pre>
-  "
+ReactDOM<span class=\\"token punctuation\\">.</span><span class=\\"token function\\">render</span><span class=\\"token punctuation\\">(</span><span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;</span>TodoApp</span> <span class=\\"token punctuation\\">/></span></span><span class=\\"token punctuation\\">,</span> mountNode<span class=\\"token punctuation\\">)</span><span class=\\"token punctuation\\">;</span></pre>"
 `;
 
 exports[`Prism should highlight markup 1`] = `
@@ -203,8 +198,7 @@ exports[`Prism should highlight markup 1`] = `
     Hello!
   <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>li</span><span class=\\"token punctuation\\">></span></span>
 <span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>ul</span><span class=\\"token punctuation\\">></span></span>
-<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>div</span><span class=\\"token punctuation\\">></span></span></pre>
-  "
+<span class=\\"token tag\\"><span class=\\"token tag\\"><span class=\\"token punctuation\\">&lt;/</span>div</span><span class=\\"token punctuation\\">></span></span></pre>"
 `;
 
 exports[`Prism should highlight ruby 1`] = `
@@ -241,6 +235,5 @@ print <span class=\\"token string\\">\\"Your magic number is \\"</span><span cla
 <span class=\\"token keyword\\">end</span>
 
 <span class=\\"token keyword\\">if</span> rno <span class=\\"token operator\\">==</span> <span class=\\"token number\\">100</span> <span class=\\"token keyword\\">then</span> print \\"<span class=\\"token constant\\">Gosh</span><span class=\\"token punctuation\\">,</span> you've maxxed out<span class=\\"token operator\\">!</span>
-\\" <span class=\\"token keyword\\">end</span></pre>
-  "
+\\" <span class=\\"token keyword\\">end</span></pre>"
 `;
