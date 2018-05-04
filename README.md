@@ -44,7 +44,7 @@ All you need is a Prism theme and you can use `reprism` right away!
 ```javascript
 import { highlight } from "reprism";
 
-import "prismjs/themes/prism-okaidia.css";
+import "reprism/themes/okaidia.css";
 
 const htmlCode = `
   <div>
